@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaivalya Sagale | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: {
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the scroll reveal animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-300 font-sans antialiased selection:bg-red-600 selection:text-white">
+
+    <!-- Ambient Red Background Glows -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-red-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-red-900/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-red-900/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo (Text Only) -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white tracking-wider">
+                        KAIVALYA
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#expertise" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Expertise</a>
+                        <a href="#leadership" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Leadership</a>
+                        <a href="mailto:hi@kaivalyasagale.online" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-red-900/50">Contact Me</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-950 border-b border-red-900/30">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#expertise" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Expertise</a>
+                <a href="#leadership" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Leadership</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 pt-32 pb-20 md:pt-48 md:pb-32 px-4 max-w-6xl mx-auto flex flex-col justify-center min-h-[80vh]">
+        <div class="max-w-3xl">
+            <p class="text-red-500 font-medium tracking-widest uppercase mb-3 text-sm md:text-base">Systems Administrator & Developer</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Hi, I'm <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
+                    Kaivalya Sagale.
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                I build and manage local server infrastructure, develop Android applications, and specialize in command-line network management.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="mailto:hi@kaivalyasagale.online" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg shadow-red-900/50 flex items-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> Get in Touch
+                </a>
+                <a href="#expertise" class="border border-red-600/50 text-white hover:bg-red-900/20 px-8 py-3 rounded-full font-medium transition-all">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Scroll Reveal Description -->
+    <section id="about" class="relative z-10 py-20 bg-neutral-950 border-y border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-l-4 border-red-600 pl-4">About Me</h2>
+            
+            <!-- This is the description paragraph that only shows when scrolled down -->
+            <div class="scroll-reveal text-gray-400 text-lg leading-relaxed max-w-4xl space-y-6">
+                <p>
+                    My passion lies in backend infrastructure and technical problem solving. While balancing my academic curriculum—where I develop comprehensive study resources and presentations—I spend my free time engineering local network solutions. 
+                </p>
+                <p>
+                    I operate extensively within Linux environments, specifically Linux Mint, where I write Bash scripts for automation, manage systemd configurations, and deploy self-hosted services via Docker. Whether it's reverse-engineering audio hardware or setting up cross-play game servers, I thrive in the terminal.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="relative z-10 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 border-l-4 border-red-600 pl-4">Technical Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skill 1 -->
+                <div class="scroll-reveal bg-neutral-900 border border-neutral-800 p-8 rounded-2xl hover:border-red-600/50 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-red-950 text-red-500 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linux"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Linux System Admin</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Extensive experience with Linux Mint. I write custom Bash scripts for system automation, configure systemd parameters (like overriding lid-closure sleep states), and manage Docker container deployments for local networks.
+                    </p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="scroll-reveal bg-neutral-900 border border-neutral-800 p-8 rounded-2xl hover:border-red-600/50 transition-all hover:-translate-y-1 group" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-red-950 text-red-500 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Game Server Hosting</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Built and configured local network Minecraft servers on Android via Termux. Utilized Purpur server software and successfully integrated GeyserMC and Floodgate to allow seamless Bedrock and Java cross-play.
+                    </p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="scroll-reveal bg-neutral-900 border border-neutral-800 p-8 rounded-2xl hover:border-red-600/50 transition-all hover:-translate-y-1 group" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-red-950 text-red-500 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Audio & IoT Networking</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Backend configuration of smart audio devices. Connected via TCP port 17000 to reset hardware presets and flashed SoundTouch Hybrid firmware to integrate Bose speakers with a local Docker-based Music Assistant.
+                    </p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="scroll-reveal bg-neutral-900 border border-neutral-800 p-8 rounded-2xl hover:border-red-600/50 transition-all hover:-translate-y-1 group" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 bg-red-950 text-red-500 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-android"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Software Development</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Exploration into Android application development using Kotlin and Android Studio. Built custom UI applications utilizing WebView elements to display and interface with local web server addresses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="relative z-10 py-20 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-l-4 border-red-600 pl-4">Leadership & Public Speaking</h2>
+            
+            <div class="scroll-reveal bg-neutral-900 border border-neutral-800 rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-red-900/50 flex items-center justify-center bg-black">
+                        <i class="fa-solid fa-globe text-5xl md:text-7xl text-red-600"></i>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <div class="inline-block bg-red-950 text-red-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                        Founder Student & Moderator
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">New Horizon Model United Nations (NHMUN 2026)</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Beyond the terminal, I step into public leadership roles. I am recognized as a Founder Student of NHMUN 2026 at New Horizon Scholars School. I participated in the opening ceremony lamp lighting and served as the diplomatic Moderator for the UN Women committee, managing parliamentary procedure and debate flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-red-900/30">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 Kaivalya Sagale. All rights reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="mailto:hi@kaivalyasagale.online" class="text-gray-500 hover:text-red-500 transition-colors">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation via Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of the element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
