@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaivalya Sagale | Portfolio</title>
+    <title>Kaivalya Sagale | Portfolio & Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -34,6 +34,16 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Blog Reader Modal Transitions */
+        #blog-modal {
+            transition: all 0.4s ease-in-out;
+        }
+        .modal-open {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body class="bg-black text-gray-300 font-sans antialiased selection:bg-red-600 selection:text-white">
@@ -45,13 +55,12 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-red-900/30">
+    <nav class="fixed w-full z-40 bg-black/80 backdrop-blur-md border-b border-red-900/30">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Brand / Logo (Text Only) -->
                 <div class="flex-shrink-0">
                     <a href="#" class="text-2xl font-bold text-white tracking-wider">
-                       
+                        KAIVALYA
                     </a>
                 </div>
                 
@@ -60,6 +69,7 @@
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#expertise" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Expertise</a>
+                        <a href="#blog" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Blog</a>
                         <a href="#leadership" class="hover:text-red-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Leadership</a>
                         <a href="mailto:hi@kaivalyasagale.online" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-red-900/50">Contact Me</a>
                     </div>
@@ -79,6 +89,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">About</a>
                 <a href="#expertise" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Expertise</a>
+                <a href="#blog" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Blog</a>
                 <a href="#leadership" class="hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Leadership</a>
             </div>
         </div>
@@ -87,7 +98,7 @@
     <!-- Hero Section -->
     <section class="relative z-10 pt-32 pb-20 md:pt-48 md:pb-32 px-4 max-w-6xl mx-auto flex flex-col justify-center min-h-[80vh]">
         <div class="max-w-3xl">
-            <p class="text-red-500 font-medium tracking-widest uppercase mb-3 text-sm md:text-base">Student & Developer</p>
+            <p class="text-red-500 font-medium tracking-widest uppercase mb-3 text-sm md:text-base">Student & developer</p>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
                 Hi, I'm <br/>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
@@ -95,31 +106,30 @@
                 </span>
             </h1>
             <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                I build things.
+                I build and manage local server infrastructure, develop Android applications, and specialize in command-line network management.
             </p>
             <div class="flex flex-wrap gap-4">
                 <a href="mailto:hi@kaivalyasagale.online" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg shadow-red-900/50 flex items-center gap-2">
                     <i class="fa-solid fa-envelope"></i> Get in Touch
                 </a>
-                <a href="#expertise" class="border border-red-600/50 text-white hover:bg-red-900/20 px-8 py-3 rounded-full font-medium transition-all">
-                    View My Work
+                <a href="#blog" class="border border-red-600/50 text-white hover:bg-red-900/20 px-8 py-3 rounded-full font-medium transition-all">
+                    Read My Blog
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Scroll Reveal Description -->
+    <!-- About Section -->
     <section id="about" class="relative z-10 py-20 bg-neutral-950 border-y border-neutral-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-l-4 border-red-600 pl-4">About Me</h2>
             
-            <!-- This is the description paragraph that only shows when scrolled down -->
             <div class="scroll-reveal text-gray-400 text-lg leading-relaxed max-w-4xl space-y-6">
                 <p>
-                   I like to learn and create new things.
+                    My passion lies in backend infrastructure and technical problem solving. While balancing my academic curriculum—where I develop comprehensive study resources and presentations—I spend my free time engineering local network solutions. 
                 </p>
                 <p>
-                    I operate extensively within Linux environments, Creating automations. I also build and manage minecraft servers. I Listen, Learn, Create.
+                    I operate extensively within Linux environments, specifically Linux Mint, where I write Bash scripts for automation, manage systemd configurations, and deploy self-hosted services via Docker. Whether it's reverse-engineering audio hardware or setting up cross-play game servers, I thrive in the terminal.
                 </p>
             </div>
         </div>
@@ -138,7 +148,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Linux System Admin</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Extensive experience with Linux Mint. Hosting and managing small to medium scale servers
+                        Extensive experience with Linux Mint. I write custom Bash scripts for system automation, configure systemd parameters (like overriding lid-closure sleep states), and manage Docker container deployments for local networks.
                     </p>
                 </div>
 
@@ -149,7 +159,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Game Server Hosting</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Built and managed several, small and medium scale minecraft server/Server networks.
+                        Built and configured local network Minecraft servers on Android via Termux. Utilized Purpur server software and successfully integrated GeyserMC and Floodgate to allow seamless Bedrock and Java cross-play.
                     </p>
                 </div>
 
@@ -160,7 +170,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Audio & IoT Networking</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Currently host multiple local webservers running soundtouch hybrid and music assistant to revive soundtouch hardware, currently trying to create a plug and play device for soundtouch hybrid. (Credit to tjgigs for soundtouch hybrid)
+                        Backend configuration of smart audio devices. Connected via TCP port 17000 to reset hardware presets and flashed SoundTouch Hybrid firmware to integrate Bose speakers with a local Docker-based Music Assistant.
                     </p>
                 </div>
 
@@ -171,15 +181,27 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Software Development</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Exploring the android app development space and learning new things.
+                        Exploration into Android application development using Kotlin and Android Studio. Built custom UI applications utilizing WebView elements to display and interface with local web server addresses.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="relative z-10 py-20 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 border-l-4 border-red-600 pl-4">Latest Writing</h2>
+            
+            <!-- Blog Posts Container -->
+            <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Posts will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Leadership Section -->
-    <section id="leadership" class="relative z-10 py-20 bg-neutral-950 border-t border-neutral-900">
+    <section id="leadership" class="relative z-10 py-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 border-l-4 border-red-600 pl-4">Leadership & Public Speaking</h2>
             
@@ -195,7 +217,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">New Horizon Model United Nations (NHMUN 2026)</h3>
                     <p class="text-gray-400 leading-relaxed mb-6">
-                        Beyond technology, I currently hold the honourary position of founder of New Horizon Model United Nations, A Model United Nations conference held by students of New Horizon Scholars School, Vasant Lawns. We held a successful conference in August of 2026, hosting of 350+ students from across New horizon schools in thane and are planning on hosting other future conferences.
+                        Beyond the terminal, I step into public leadership roles. I am recognized as a Founder Student of NHMUN 2026 at New Horizon Scholars School. I participated in the opening ceremony lamp lighting and served as the diplomatic Moderator for the UN Women committee, managing parliamentary procedure and debate flow.
                     </p>
                 </div>
             </div>
@@ -216,44 +238,88 @@
         </div>
     </footer>
 
+    <!-- Fullscreen Blog Reader Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl opacity-0 pointer-events-none translate-y-8 overflow-y-auto">
+        <div class="max-w-3xl mx-auto px-4 py-20 relative">
+            <button onclick="closePost()" class="absolute top-6 right-4 md:right-0 text-gray-400 hover:text-white bg-neutral-900 hover:bg-red-600 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div id="blog-modal-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script>
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+        // --------------------------------------------------------
+        // 1. BLOG CONTENT DATA
+        // To add a new post, just add a new object to this array!
+        // --------------------------------------------------------
+        const blogPosts = [
+            {
+                id: 1,
+                title: "Overriding Bose SoundTouch 10 for Local Docker Streaming",
+                date: "September 24, 2026",
+                summary: "How I bypassed default Bose firmware using TCP port 17000 to route audio through a local Music Assistant Docker container on Linux Mint.",
+                content: `
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">The Bose SoundTouch 10 is a great piece of hardware, but it is highly restricted by its default software ecosystem. I wanted to stream audio locally from my Linux Mint server using Music Assistant without relying on the official app.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-8 mb-4">The Solution: SoundTouch Hybrid</h3>
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">To bypass the restrictions, I utilized STReborn/SoundTouch Hybrid firmware. The process required clearing the hardware presets manually via terminal.</p>
+                    
+                    <div class="bg-neutral-900 p-4 rounded-lg border border-neutral-800 my-6 font-mono text-sm text-red-400 overflow-x-auto">
+                        # Connecting to the speaker locally<br/>
+                        telnet 192.168.1.XX 17000<br/>
+                        <br/>
+                        # Clearing existing presets and routing to Docker<br/>
+                        sysreset<br/>
+                    </div>
+                    
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">After resetting the internal registry, I deployed a Music Assistant container on my Linux Mint host. The Bose speaker now pulls its stream directly from my local network, drastically reducing latency and removing the need for external cloud accounts.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Running a Cross-Play Minecraft Server on Android (Termux)",
+                date: "August 12, 2026",
+                summary: "A guide on using Termux, Purpur, GeyserMC, and Floodgate to host a Java/Bedrock cross-play Minecraft server natively on an Android device.",
+                content: `
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">Hosting a local Minecraft server usually requires dedicated PC hardware. I wanted to see if I could push an Android device to act as a fully functional local server using Termux.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-8 mb-4">The Architecture</h3>
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">Using Termux, I installed a headless Java environment. Instead of the vanilla server jar, I opted for <strong>Purpur</strong> due to its heavy optimizations, which are crucial when running on a mobile CPU.</p>
+                    
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">To allow my friends on mobile (Bedrock Edition) to join my Java server, I installed the <strong>GeyserMC</strong> plugin alongside <strong>Floodgate</strong>. This handles the packet translation between the two entirely different game engines in real-time.</p>
+                    
+                    <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2 text-lg">
+                        <li><strong>Host:</strong> Android (Termux)</li>
+                        <li><strong>Engine:</strong> Purpur (Java)</li>
+                        <li><strong>Translation:</strong> GeyserMC</li>
+                        <li><strong>Authentication:</strong> Floodgate</li>
+                    </ul>
+                    
+                    <p class="mb-4 text-gray-300 leading-relaxed text-lg">The server runs smoothly over the local network, proving that old Android phones can be repurposed into highly capable micro-servers.</p>
+                `
+            }
+        ];
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Scroll Reveal Animation via Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.scroll-reveal');
+        // --------------------------------------------------------
+        // 2. RENDER THE BLOG CARDS
+        // --------------------------------------------------------
+        const blogContainer = document.getElementById('blog-container');
+        
+        blogPosts.forEach((post, index) => {
+            const delay = index * 100;
+            const card = document.createElement('div');
+            card.className = \`scroll-reveal bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-red-600/50 transition-all flex flex-col justify-between h-full\`;
+            card.style.transitionDelay = \`\${delay}ms\`;
             
-            const revealOptions = {
-                threshold: 0.15, // Trigger when 15% of the element is visible
-                rootMargin: "0px 0px -50px 0px"
-            };
-
-            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, revealOptions);
-
-            reveals.forEach(reveal => {
-                revealOnScroll.observe(reveal);
-            });
-        });
-    </script>
-</body>
-</html>
+            card.innerHTML = \`
+                <div>
+                    <div class="text-red-500 text-sm font-bold tracking-wider uppercase mb-2">\${post.date}</div>
+                    <h3 class="text-xl font-bold text-white mb-3 line-clamp-2">\${post.title}</h3>
+                    <p class="text-gray-400 mb-6 line-clamp-3">\${post.summary}</p>
+                </div>
+                <button onclick="openPost(\${post.id})" class="
